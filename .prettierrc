@@ -1,4 +1,18 @@
 {
-  "singleQuote": true,
-  "parser": "babylon"
+ "semi": false,
+ "singleQuote": true,
+ "overrides": [
+    {
+        "files": "**/*.js",
+        "options": {
+            "parser": "babel"
+        }
+    },
+    {
+      "files": "**/*.md",
+      "options": {
+        "parser": "markdown"
+      }
+    }
+  ]
 }
