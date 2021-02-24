@@ -1336,12 +1336,12 @@ describe("History", function() {
         {color: 'b', from: 'h7', to: 'h6', flags: 'n', piece: 'p', san: 'h6'},
         {color: 'w', from: 'g5', to: 'h4', flags: 'n', piece: 'b', san: 'Bh4'},
         {color: 'b', from: 'b7', to: 'b6', flags: 'n', piece: 'p', san: 'b6'},
-        {color: 'w', from: 'c4', to: 'd5', flags: 'c', piece: 'p', captured: 'p', san: 'cxd5'},
-        {color: 'b', from: 'f6', to: 'd5', flags: 'c', piece: 'n', captured: 'p', san: 'Nxd5'},
-        {color: 'w', from: 'h4', to: 'e7', flags: 'c', piece: 'b', captured: 'b', san: 'Bxe7'},
-        {color: 'b', from: 'd8', to: 'e7', flags: 'c', piece: 'q', captured: 'b', san: 'Qxe7'},
-        {color: 'w', from: 'c3', to: 'd5', flags: 'c', piece: 'n', captured: 'n', san: 'Nxd5'},
-        {color: 'b', from: 'e6', to: 'd5', flags: 'c', piece: 'p', captured: 'n', san: 'exd5'},
+        {color: 'w', from: 'c4', to: 'd5', flags: 'c', piece: 'p', captured: 'p', san: 'cxd5', captured_id: 75},
+        {color: 'b', from: 'f6', to: 'd5', flags: 'c', piece: 'n', captured: 'p', san: 'Nxd5', captured_id: 82},
+        {color: 'w', from: 'h4', to: 'e7', flags: 'c', piece: 'b', captured: 'b', san: 'Bxe7', captured_id: 69},
+        {color: 'b', from: 'd8', to: 'e7', flags: 'c', piece: 'q', captured: 'b', san: 'Qxe7', captured_id: 90},
+        {color: 'w', from: 'c3', to: 'd5', flags: 'c', piece: 'n', captured: 'n', san: 'Nxd5', captured_id: 70},
+        {color: 'b', from: 'e6', to: 'd5', flags: 'c', piece: 'p', captured: 'n', san: 'exd5', captured_id: 89},
         {color: 'w', from: 'a1', to: 'c1', flags: 'n', piece: 'r', san: 'Rc1'},
         {color: 'b', from: 'c8', to: 'e6', flags: 'n', piece: 'b', san: 'Be6'},
         {color: 'w', from: 'd1', to: 'a4', flags: 'n', piece: 'q', san: 'Qa4'},
@@ -1350,16 +1350,16 @@ describe("History", function() {
         {color: 'b', from: 'f8', to: 'c8', flags: 'n', piece: 'r', san: 'Rc8'},
         {color: 'w', from: 'f1', to: 'b5', flags: 'n', piece: 'b', san: 'Bb5'},
         {color: 'b', from: 'a7', to: 'a6', flags: 'n', piece: 'p', san: 'a6'},
-        {color: 'w', from: 'd4', to: 'c5', flags: 'c', piece: 'p', captured: 'p', san: 'dxc5'},
-        {color: 'b', from: 'b6', to: 'c5', flags: 'c', piece: 'p', captured: 'p', san: 'bxc5'},
+        {color: 'w', from: 'd4', to: 'c5', flags: 'c', piece: 'p', captured: 'p', san: 'dxc5', captured_id: 74},
+        {color: 'b', from: 'b6', to: 'c5', flags: 'c', piece: 'p', captured: 'p', san: 'bxc5', captured_id: 83},
         {color: 'w', from: 'e1', to: 'g1', flags: 'k', piece: 'k', san: 'O-O'},
         {color: 'b', from: 'a8', to: 'a7', flags: 'n', piece: 'r', san: 'Ra7'},
         {color: 'w', from: 'b5', to: 'e2', flags: 'n', piece: 'b', san: 'Be2'},
         {color: 'b', from: 'b8', to: 'd7', flags: 'n', piece: 'n', san: 'Nd7'},
         {color: 'w', from: 'f3', to: 'd4', flags: 'n', piece: 'n', san: 'Nd4'},
         {color: 'b', from: 'e7', to: 'f8', flags: 'n', piece: 'q', san: 'Qf8'},
-        {color: 'w', from: 'd4', to: 'e6', flags: 'c', piece: 'n', captured: 'b', san: 'Nxe6'},
-        {color: 'b', from: 'f7', to: 'e6', flags: 'c', piece: 'p', captured: 'n', san: 'fxe6'},
+        {color: 'w', from: 'd4', to: 'e6', flags: 'c', piece: 'n', captured: 'b', san: 'Nxe6', captured_id: 66},
+        {color: 'b', from: 'f7', to: 'e6', flags: 'c', piece: 'p', captured: 'n', san: 'fxe6', captured_id: 94},
         {color: 'w', from: 'e3', to: 'e4', flags: 'n', piece: 'p', san: 'e4'},
         {color: 'b', from: 'd5', to: 'd4', flags: 'n', piece: 'p', san: 'd4'},
         {color: 'w', from: 'f2', to: 'f4', flags: 'b', piece: 'p', san: 'f4'},
@@ -1373,8 +1373,8 @@ describe("History", function() {
         {color: 'w', from: 'b2', to: 'b3', flags: 'n', piece: 'p', san: 'b3'},
         {color: 'b', from: 'a6', to: 'a5', flags: 'n', piece: 'p', san: 'a5'},
         {color: 'w', from: 'f4', to: 'f5', flags: 'n', piece: 'p', san: 'f5'},
-        {color: 'b', from: 'e6', to: 'f5', flags: 'c', piece: 'p', captured: 'p', san: 'exf5'},
-        {color: 'w', from: 'f1', to: 'f5', flags: 'c', piece: 'r', captured: 'p', san: 'Rxf5'},
+        {color: 'b', from: 'e6', to: 'f5', flags: 'c', piece: 'p', captured: 'p', san: 'exf5', captured_id: 85},
+        {color: 'w', from: 'f1', to: 'f5', flags: 'c', piece: 'r', captured: 'p', san: 'Rxf5', captured_id: 77},
         {color: 'b', from: 'f8', to: 'h7', flags: 'n', piece: 'n', san: 'Nh7'},
         {color: 'w', from: 'c1', to: 'f1', flags: 'n', piece: 'r', san: 'Rcf1'},
         {color: 'b', from: 'e7', to: 'd8', flags: 'n', piece: 'q', san: 'Qd8'},
@@ -1396,9 +1396,9 @@ describe("History", function() {
         {color: 'b', from: 'd8', to: 'e8', flags: 'n', piece: 'q', san: 'Qe8'},
         {color: 'w', from: 'e5', to: 'e4', flags: 'n', piece: 'q', san: 'Qe4'},
         {color: 'b', from: 'h7', to: 'f6', flags: 'n', piece: 'n', san: 'Nf6'},
-        {color: 'w', from: 'f5', to: 'f6', flags: 'c', piece: 'r', captured: 'n', san: 'Rxf6'},
-        {color: 'b', from: 'g7', to: 'f6', flags: 'c', piece: 'p', captured: 'r', san: 'gxf6'},
-        {color: 'w', from: 'f3', to: 'f6', flags: 'c', piece: 'r', captured: 'p', san: 'Rxf6'},
+        {color: 'w', from: 'f5', to: 'f6', flags: 'c', piece: 'r', captured: 'n', san: 'Rxf6', captured_id: 65},
+        {color: 'b', from: 'g7', to: 'f6', flags: 'c', piece: 'p', captured: 'r', san: 'gxf6', captured_id: 95},
+        {color: 'w', from: 'f3', to: 'f6', flags: 'c', piece: 'r', captured: 'p', san: 'Rxf6', captured_id: 78},
         {color: 'b', from: 'h8', to: 'g8', flags: 'n', piece: 'k', san: 'Kg8'},
         {color: 'w', from: 'd3', to: 'c4', flags: 'n', piece: 'b', san: 'Bc4'},
         {color: 'b', from: 'g8', to: 'h8', flags: 'n', piece: 'k', san: 'Kh8'},
@@ -1448,101 +1448,117 @@ describe('Board Tests', function() {
 
   var tests = [
     {fen: 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1',
-      board: [[{type: 'r', color: 'b'},
-               {type: 'n', color: 'b'},
-               {type: 'b', color: 'b'},
-               {type: 'q', color: 'b'},
-               {type: 'k', color: 'b'},
-               {type: 'b', color: 'b'},
-               {type: 'n', color: 'b'},
-               {type: 'r', color: 'b'}],
-              [{type: 'p', color: 'b'},
-               {type: 'p', color: 'b'},
-               {type: 'p', color: 'b'},
-               {type: 'p', color: 'b'},
-               {type: 'p', color: 'b'},
-               {type: 'p', color: 'b'},
-               {type: 'p', color: 'b'},
-               {type: 'p', color: 'b'}],
-              [null, null, null, null, null, null, null, null],
-              [null, null, null, null, null, null, null, null],
-              [null, null, null, null, null, null, null, null],
-              [null, null, null, null, null, null, null, null],
-              [{type: 'p', color: 'w'},
-               {type: 'p', color: 'w'},
-               {type: 'p', color: 'w'},
-               {type: 'p', color: 'w'},
-               {type: 'p', color: 'w'},
-               {type: 'p', color: 'w'},
-               {type: 'p', color: 'w'},
-               {type: 'p', color: 'w'}],
-              [{type: 'r', color: 'w'},
-               {type: 'n', color: 'w'},
-               {type: 'b', color: 'w'},
-               {type: 'q', color: 'w'},
-               {type: 'k', color: 'w'},
-               {type: 'b', color: 'w'},
-               {type: 'n', color: 'w'},
-               {type: 'r', color: 'w'}]]},
+      board: [
+        [
+          { type: 'r', color: 'b', id: 0 },
+          { type: 'n', color: 'b', id: 1 },
+          { type: 'b', color: 'b', id: 2 },
+          { type: 'q', color: 'b', id: 3 },
+          { type: 'k', color: 'b', id: 4 },
+          { type: 'b', color: 'b', id: 5 },
+          { type: 'n', color: 'b', id: 6 },
+          { type: 'r', color: 'b', id: 7 }
+        ],
+        [
+          { type: 'p', color: 'b', id: 8 },
+          { type: 'p', color: 'b', id: 9 },
+          { type: 'p', color: 'b', id: 10 },
+          { type: 'p', color: 'b', id: 11 },
+          { type: 'p', color: 'b', id: 12 },
+          { type: 'p', color: 'b', id: 13 },
+          { type: 'p', color: 'b', id: 14 },
+          { type: 'p', color: 'b', id: 15 }
+        ],
+        [null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null],
+        [
+          { type: 'p', color: 'w', id: 16 },
+          { type: 'p', color: 'w', id: 17 },
+          { type: 'p', color: 'w', id: 18 },
+          { type: 'p', color: 'w', id: 19 },
+          { type: 'p', color: 'w', id: 20 },
+          { type: 'p', color: 'w', id: 21 },
+          { type: 'p', color: 'w', id: 22 },
+          { type: 'p', color: 'w', id: 23 }
+        ],
+        [
+          { type: 'r', color: 'w', id: 24 },
+          { type: 'n', color: 'w', id: 25 },
+          { type: 'b', color: 'w', id: 26 },
+          { type: 'q', color: 'w', id: 27 },
+          { type: 'k', color: 'w', id: 28 },
+          { type: 'b', color: 'w', id: 29 },
+          { type: 'n', color: 'w', id: 30 },
+          { type: 'r', color: 'w', id: 31 }
+        ]
+      ]
+    },
     // checkmate
 	{fen: 'r3k2r/ppp2p1p/2n1p1p1/8/2B2P1q/2NPb1n1/PP4PP/R2Q3K w kq - 0 8',
-	  board:[[{type: 'r', color: 'b'},
-			  null,
-			  null,
-			  null,
-			  {type: 'k', color: 'b'},
-			  null,
-			  null,
-			  {type: 'r', color: 'b'}],
-		     [{type: 'p', color: 'b'},
-		      {type: 'p', color: 'b'},
-		      {type: 'p', color: 'b'},
-		      null,
-		      null,
-		      {type: 'p', color: 'b'},
-		      null,
-		      {type: 'p', color: 'b'}],
-		     [null,
-		      null,
-		      {type: 'n', color: 'b'},
-		      null,
-		      {type: 'p', color: 'b'},
-		      null,
-		      {type: 'p', color: 'b'},
-		      null],
-		     [null, null, null, null, null, null, null, null],
-		     [null,
-		      null,
-		      {type: 'b', color: 'w'},
-		      null,
-		      null,
-		      {type: 'p', color: 'w'},
-		      null,
-		      {type: 'q', color: 'b'}],
-		     [null,
-		      null,
-		      {type: 'n', color: 'w'},
-		      {type: 'p', color: 'w'},
-		      {type: 'b', color: 'b'},
-		      null,
-		      {type: 'n', color: 'b'},
-		      null],
-		     [{type: 'p', color: 'w'},
-		      {type: 'p', color: 'w'},
-		      null,
-		      null,
-		      null,
-		      null,
-		      {type: 'p', color: 'w'},
-		      {type: 'p', color: 'w'}],
-		     [{type: 'r', color: 'w'},
-		      null,
-		      null,
-		      {type: 'q', color: 'w'},
-		      null,
-		      null,
-		      null,
-		      {type: 'k', color: 'w'}]]}
+	  board:[
+      [
+        { type: 'r', color: 'b', id: 0 },
+        null, null, null,
+        { type: 'k', color: 'b', id: 1 },
+        null, null,
+        { type: 'r', color: 'b', id: 2 }
+      ],
+      [
+        { type: 'p', color: 'b', id: 3 },
+        { type: 'p', color: 'b', id: 4 },
+        { type: 'p', color: 'b', id: 5 },
+        null, null,
+        { type: 'p', color: 'b', id: 6 },
+        null,
+        { type: 'p', color: 'b', id: 7 }
+      ],
+      [
+        null, null,
+        { type: 'n', color: 'b', id: 8 },
+        null,
+        { type: 'p', color: 'b', id: 9 },
+        null,
+        { type: 'p', color: 'b', id: 10 },
+        null
+      ],
+      [
+        null, null, null, null, null, null, null, null
+      ],
+      [
+        null, null,
+        { type: 'b', color: 'w', id: 11 },
+        null, null,
+        { type: 'p', color: 'w', id: 12 },
+        null,
+        { type: 'q', color: 'b', id: 13 }
+      ],
+      [
+        null,
+        null,
+        { type: 'n', color: 'w', id: 14 },
+        { type: 'p', color: 'w', id: 15 },
+        { type: 'b', color: 'b', id: 16 },
+        null,
+        { type: 'n', color: 'b', id: 17 },
+        null
+      ],
+      [
+        { type: 'p', color: 'w', id: 18 },
+        { type: 'p', color: 'w', id: 19 },
+        null, null, null, null,
+        { type: 'p', color: 'w', id: 20 },
+        { type: 'p', color: 'w', id: 21 }
+      ],
+      [
+        { type: 'r', color: 'w', id: 22 },
+        null, null,
+        { type: 'q', color: 'w', id: 23 },
+        null, null, null,
+        { type: 'k', color: 'w', id: 24 }
+      ]
+    ]}
   ];
 
 
@@ -1688,4 +1704,122 @@ describe('Regression Tests', function() {
     };
     expect(chess.header()).toEqual(expected);
   })
+});
+
+
+describe("Indices", function() {
+  var indices_data = [
+    {
+      test_name: "Indices - starting position",
+      actions: [],
+      indices:
+      '   +----------------------------------------+\n' +
+      ' 8 | 000  001  002  003  004  005  006  007 |\n' +
+      ' 7 | 008  009  010  011  012  013  014  015 |\n' +
+      ' 6 | ...  ...  ...  ...  ...  ...  ...  ... |\n' +
+      ' 5 | ...  ...  ...  ...  ...  ...  ...  ... |\n' +
+      ' 4 | ...  ...  ...  ...  ...  ...  ...  ... |\n' +
+      ' 3 | ...  ...  ...  ...  ...  ...  ...  ... |\n' +
+      ' 2 | 016  017  018  019  020  021  022  023 |\n' +
+      ' 1 | 024  025  026  027  028  029  030  031 |\n' +
+      '   +----------------------------------------+\n' +
+      '      a    b    c    d    e    f    g    h\n'
+    },
+    {
+      test_name: "Indices - undo",
+      actions: ["d4", "e5", "Nf3", "Nf6", "undo", "a6"],
+      indices:
+      '   +----------------------------------------+\n' +
+      ' 8 | 000  001  002  003  004  005  006  007 |\n' +
+      ' 7 | ...  009  010  011  ...  013  014  015 |\n' +
+      ' 6 | 008  ...  ...  ...  ...  ...  ...  ... |\n' +
+      ' 5 | ...  ...  ...  ...  012  ...  ...  ... |\n' +
+      ' 4 | ...  ...  ...  019  ...  ...  ...  ... |\n' +
+      ' 3 | ...  ...  ...  ...  ...  030  ...  ... |\n' +
+      ' 2 | 016  017  018  ...  020  021  022  023 |\n' +
+      ' 1 | 024  025  026  027  028  029  ...  031 |\n' +
+      '   +----------------------------------------+\n' +
+      '      a    b    c    d    e    f    g    h\n'
+    },
+    {
+      test_name: "Indices - capture",
+      actions: ["d4", "e5", "dxe5", "Nc6", "e6", "fxe6"],
+      indices:
+      '   +----------------------------------------+\n' +
+      ' 8 | 000  ...  002  003  004  005  006  007 |\n' +
+      ' 7 | 008  009  010  011  ...  ...  014  015 |\n' +
+      ' 6 | ...  ...  001  ...  013  ...  ...  ... |\n' +
+      ' 5 | ...  ...  ...  ...  ...  ...  ...  ... |\n' +
+      ' 4 | ...  ...  ...  ...  ...  ...  ...  ... |\n' +
+      ' 3 | ...  ...  ...  ...  ...  ...  ...  ... |\n' +
+      ' 2 | 016  017  018  ...  020  021  022  023 |\n' +
+      ' 1 | 024  025  026  027  028  029  030  031 |\n' +
+      '   +----------------------------------------+\n' +
+      '      a    b    c    d    e    f    g    h\n'
+    },
+    {
+      test_name: "Indices - promotion and undo",
+      actions: ["d4", "e5", "dxe5", "f6", "exf6", "h6", "fxg7", "h5", "gxh8=Q", "undo"],
+      indices:
+      '   +----------------------------------------+\n' +
+      ' 8 | 000  001  002  003  004  005  006  007 |\n' +
+      ' 7 | 008  009  010  011  ...  ...  019  ... |\n' +
+      ' 6 | ...  ...  ...  ...  ...  ...  ...  ... |\n' +
+      ' 5 | ...  ...  ...  ...  ...  ...  ...  015 |\n' +
+      ' 4 | ...  ...  ...  ...  ...  ...  ...  ... |\n' +
+      ' 3 | ...  ...  ...  ...  ...  ...  ...  ... |\n' +
+      ' 2 | 016  017  018  ...  020  021  022  023 |\n' +
+      ' 1 | 024  025  026  027  028  029  030  031 |\n' +
+      '   +----------------------------------------+\n' +
+      '      a    b    c    d    e    f    g    h\n'
+    },
+    {
+      test_name: "Indices - en passant",
+      actions: ["d4", "h6", "d5", "e5", "dxe6"],
+      indices:
+      '   +----------------------------------------+\n' +
+      ' 8 | 000  001  002  003  004  005  006  007 |\n' +
+      ' 7 | 008  009  010  011  ...  013  014  ... |\n' +
+      ' 6 | ...  ...  ...  ...  019  ...  ...  015 |\n' +
+      ' 5 | ...  ...  ...  ...  ...  ...  ...  ... |\n' +
+      ' 4 | ...  ...  ...  ...  ...  ...  ...  ... |\n' +
+      ' 3 | ...  ...  ...  ...  ...  ...  ...  ... |\n' +
+      ' 2 | 016  017  018  ...  020  021  022  023 |\n' +
+      ' 1 | 024  025  026  027  028  029  030  031 |\n' +
+      '   +----------------------------------------+\n' +
+      '      a    b    c    d    e    f    g    h\n'
+    },
+    {
+      test_name: "Indices - en passant and undo",
+      actions: ["d4", "h6", "d5", "e5", "dxe6", "undo"],
+      indices:
+      '   +----------------------------------------+\n' +
+      ' 8 | 000  001  002  003  004  005  006  007 |\n' +
+      ' 7 | 008  009  010  011  ...  013  014  ... |\n' +
+      ' 6 | ...  ...  ...  ...  ...  ...  ...  015 |\n' +
+      ' 5 | ...  ...  ...  019  012  ...  ...  ... |\n' +
+      ' 4 | ...  ...  ...  ...  ...  ...  ...  ... |\n' +
+      ' 3 | ...  ...  ...  ...  ...  ...  ...  ... |\n' +
+      ' 2 | 016  017  018  ...  020  021  022  023 |\n' +
+      ' 1 | 024  025  026  027  028  029  030  031 |\n' +
+      '   +----------------------------------------+\n' +
+      '      a    b    c    d    e    f    g    h\n'
+    }
+  ];
+
+  indices_data.forEach(function(data) {
+    it(data.test_name, function (){
+      var chess = new Chess();
+      data.actions.forEach(function(action) {
+        if(action == "undo") {
+          chess.undo()
+        }
+        else{ 
+          chess.move(action)
+        }
+      })
+      expect(chess.indices() === data.indices).toBe(true)
+    })
+  });
+
 });

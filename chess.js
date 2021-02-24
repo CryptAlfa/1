@@ -149,6 +149,8 @@ var Chess = function(fen) {
       { square: SQUARES.h8, flag: BITS.KSIDE_CASTLE }
     ]
   }
+  
+  var ID_COUNTER = 0
 
   var board = new Array(128)
   var kings = { w: EMPTY, b: EMPTY }
@@ -235,7 +237,7 @@ var Chess = function(fen) {
         square += parseInt(piece, 10)
       } else {
         var color = piece < 'a' ? WHITE : BLACK
-        put({ type: piece.toLowerCase(), color: color }, algebraic(square))
+        put({ type: piece.toLowerCase(), color: color, id: ID_COUNTER++ }, algebraic(square))
         square++
       }
     }
@@ -441,7 +443,7 @@ var Chess = function(fen) {
 
   function get(square) {
     var piece = board[SQUARES[square]]
-    return piece ? { type: piece.type, color: piece.color } : null
+    return piece ? { type: piece.type, color: piece.color, id: piece.id } : null
   }
 
   function put(piece, square) {
@@ -470,7 +472,7 @@ var Chess = function(fen) {
       return false
     }
 
-    board[sq] = { type: piece.type, color: piece.color }
+    board[sq] = { type: piece.type, color: piece.color, id: piece.id }
     if (piece.type === KING) {
       kings[piece.color] = sq
     }
@@ -508,8 +510,10 @@ var Chess = function(fen) {
 
     if (board[to]) {
       move.captured = board[to].type
+      move.captured_id = board[to].id;
     } else if (flags & BITS.EP_CAPTURE) {
       move.captured = PAWN
+      move.captured_id = board[to + (move.color === "w" ? 16 : -16)].id;
     }
     return move
   }
@@ -908,9 +912,9 @@ var Chess = function(fen) {
       }
     }
 
-    /* if pawn promotion, replace with new piece */
+    /* if pawn promotion, replace with new piece (that retains the orignal id) */
     if (move.flags & BITS.PROMOTION) {
-      board[move.to] = { type: move.promotion, color: us }
+      board[move.to] = { type: move.promotion, color: us, id: board[move.to].id }
     }
 
     /* if we moved the king */
@@ -1008,7 +1012,7 @@ var Chess = function(fen) {
     board[move.to] = null
 
     if (move.flags & BITS.CAPTURE) {
-      board[move.to] = { type: move.captured, color: them }
+      board[move.to] = { type: move.captured, color: them, id: move.captured_id }
     } else if (move.flags & BITS.EP_CAPTURE) {
       var index
       if (us === BLACK) {
@@ -1016,7 +1020,7 @@ var Chess = function(fen) {
       } else {
         index = move.to + 16
       }
-      board[index] = { type: PAWN, color: them }
+      board[index] = { type: PAWN, color: them, id: move.captured_id }
     }
 
     if (move.flags & (BITS.KSIDE_CASTLE | BITS.QSIDE_CASTLE)) {
@@ -1114,6 +1118,38 @@ var Chess = function(fen) {
     }
     s += '   +------------------------+\n'
     s += '     a  b  c  d  e  f  g  h\n'
+
+    return s
+  }
+
+  function indices() {
+    var s = '   +----------------------------------------+\n'
+    for (var i = SQUARES.a8; i <= SQUARES.h1; i++) {
+      /* display the rank */
+      if (file(i) === 0) {
+        s += ' ' + '87654321'[rank(i)] + ' |'
+      }
+
+      /* empty piece */
+      if (board[i] == null) {
+        s += ' ... '
+      } else {
+        var pad = (num, size) => {
+          var s = num.toString()
+          while (s.length < size) s = "0" + s
+          return s
+        }
+        var id = pad(board[i].id, 3)
+        s += ' ' + id + ' '
+      }
+
+      if ((i + 1) & 0x88) {
+        s += '|\n'
+        i += 8
+      }
+    }
+    s += '   +----------------------------------------+\n'
+    s += '      a    b    c    d    e    f    g    h\n'
 
     return s
   }
@@ -1373,7 +1409,7 @@ var Chess = function(fen) {
         if (board[i] == null) {
           row.push(null)
         } else {
-          row.push({ type: board[i].type, color: board[i].color })
+          row.push({ type: board[i].type, color: board[i].color, id: board[i].id })
         }
         if ((i + 1) & 0x88) {
           output.push(row)
@@ -1741,6 +1777,10 @@ var Chess = function(fen) {
 
     ascii: function() {
       return ascii()
+    },
+
+    indices: function() {
+      return indices()
     },
 
     turn: function() {
