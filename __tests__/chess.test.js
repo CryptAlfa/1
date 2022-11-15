@@ -1453,6 +1453,42 @@ describe('Validate FEN', () => {
       error_number: 11,
     },
     {
+      fen: '8/2K5/8/8/2K1NB2/8/8/8 w - - 96 46',
+      error_number: 12,
+    },
+    {
+      fen: 'K7/K7/8/8/8/8/8/8 w - - 0 1',
+      error_number: 12,
+    },
+    {
+      fen: 'k7/k7/8/8/8/8/8/8 w - - 0 1',
+      error_number: 12,
+    },
+    {
+      fen: '8/8/8/8/8/3k4/2K5/8 w - - 0 1',
+      error_number: 13,
+    },
+    {
+      fen: '8/8/8/4k3/4K3/8/8/8 b - - 0 1',
+      error_number: 13,
+    },
+    {
+      fen: '2P5/8/8/3k4/8/2K5/8/8 w - - 0 1',
+      error_number: 14,
+    },
+    {
+      fen: '8/8/8/3k4/8/2K5/8/5P2 w - - 0 1',
+      error_number: 14,
+    },
+    {
+      fen: '8/8/8/3k4/8/5K2/8/p7 w - - 0 1',
+      error_number: 14,
+    },
+    {
+      fen: '6p1/8/8/3k4/8/5K2/8/8 w - - 0 1',
+      error_number: 14,
+    },
+    {
       fen: 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1',
       error_number: 0,
     },
