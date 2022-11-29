@@ -557,6 +557,9 @@ export const Chess = function (fen) {
       if (typeof args[i] === 'string' && typeof args[i + 1] === 'string') {
         header[args[i]] = args[i + 1]
       }
+      else if (typeof args[i] === 'string' && typeof args[i + 1] === 'undefined') {
+        delete header[args[i]]
+      }
     }
     return header
   }
